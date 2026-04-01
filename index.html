@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casper Hamers — UI/UX Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Casper Hamers</a>
+  <ul class="nav-links">
+    <li><a href="#projecten" onclick="navigateTo(event,'#projecten')">Projecten</a></li>
+    <li><a href="#over-mij" onclick="navigateTo(event,'#over-mij')">Over mij</a></li>
+    <li><a href="#contact" onclick="navigateTo(event,'#contact')">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobile()" aria-label="Sluiten">&times;</button>
+  <a href="#projecten" onclick="navigateTo(event,'#projecten')">Projecten</a>
+  <a href="#over-mij" onclick="navigateTo(event,'#over-mij')">Over mij</a>
+  <a href="#contact" onclick="navigateTo(event,'#contact')">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>
+        Casper Hamers
+        <span>Digital Designer</span>
+      </h1>
+      <p>Ik ontwerp digitale ervaringen die echt werken. Of het nu gaat om een interactief prototype, een website of een visuele campagne — ik pak graag het hele creatieve proces aan.</p>
+      <div class="hero-cta">
+        <a href="#projecten" class="btn btn-primary" onclick="navigateTo(event,'#projecten')">Bekijk mijn werk</a>
+        <a href="#contact" class="btn btn-outline" onclick="navigateTo(event,'#contact')">Contact</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-frame">
+        <!-- REPLACE: swap src with your professional photo -->
+        <img src="img/headshot.jpg" alt="Casper Hamers" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,#4A9E85,#2D5C4F);display:flex;align-items:center;justify-content:center;color:#A8CFC2;font-size:0.85rem;text-align:center;padding:2rem;\'>Jouw foto hier</div>'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="height:80px">
+    <path d="M0 0H1440V40C1440 40 1320 80 1080 60C840 40 720 80 480 60C240 40 120 70 0 50V0Z" fill="#2D5C4F"/>
+  </svg>
+</div>
+
+<!-- PROJECTEN -->
+<section id="projecten">
+  <div class="section-inner">
+    <p class="section-label">Portfolio</p>
+    <h2 class="section-title">Projecten</h2>
+    <p class="section-subtitle">Een selectie van mijn werk — van UX design tot visuele campagnes.</p>
+
+    <!-- PROJECT 1 -->
+    <div class="project-card fade-in" id="project1">
+      <div class="project-header" onclick="toggleProject('project1')">
+        <div class="project-visual"> <img src="img/padel-hero.png" alt="Padelbaan Configurator">
+          <div class="placeholder-img">
+            <span class="icon">🎾</span>Screenshots Padelbaan Configurator
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-tag">UX/UI Design</span>
+          <h3>Padelbaan Configurator</h3>
+          <p class="project-summary">Visuele configuratietool ontworpen voor Allesvoorpadel waarmee klanten zelf hun ideale padelbaan samenstellen.</p>
+          <div class="project-toggle">
+            <span>Meer bekijken</span>
+            <span class="arrow">▼</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-detail">
+        <div class="project-detail-inner">
+          <div class="carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="img/padel-2.png" alt="Welkomstscherm"></div>
+              <div class="carousel-slide"><img src="img/padel-3.png" alt="ingang opties"></div>
+              <div class="carousel-slide"><img src="img/padel-4.png" alt="Aangepaste baan"></div>
+              <div class="carousel-slide"><img src="img/padel-5.png" alt="Keuzelijst met prijzen"></div>
+            </div>
+            <button class="carousel-btn prev" onclick="carouselNav(this, -1)">◂</button>
+            <button class="carousel-btn next" onclick="carouselNav(this, 1)">▸</button>
+          </div>
+          <div class="carousel-dots" data-dots></div>
+          <p class="project-detail-text">
+            Allesvoorpadel vroeg mij een digitale en interactieve oplossing te ontwikkelen die klanten een helder en volledig beeld geeft van de padelbanen die zij aanbieden. Uit mijn onderzoek bleek dat klanten onvoldoende inzicht hadden in de mogelijkheden en meer controle wilden bij het samenstellen van hun ideale padelbaan. Daarom heb ik de Padelbaan Configurator ontworpen: een visuele tool waarmee klanten alle onderdelen aanpassen, direct zien hoe de baan eruitziet en wat de prijs wordt. Creatieve vrijheid, transparantie en vertrouwen voor de klant — en voor Allesvoorpadel precies inzicht in wat de klant wil.
+          </p>
+          <a href="https://www.figma.com/proto/nzeudOR02clQDIcA4z6rkA/configurator-compleet?page-id=0%3A1&node-id=38-11208&p=f&viewport=484%2C-2684%2C0.06&t=eOPs8hNvVca3QfR1-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=38%3A11208&show-proto-sidebar=1" target="_blank" class="btn-proto">Bekijk prototype →</a>
+          <div class="project-skills">
+            <span>User Research</span>
+            <span>User Flows</span>
+            <span>Wireframing</span>
+            <span>Prototyping</span>
+            <span>UI Design</span>
+            <span>Figma</span>
+          </div>
+          <div class="project-close-toggle" onclick="toggleProject('project1')">
+            <span>Minder bekijken</span>
+            <span class="arrow">▲</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-card fade-in" id="project2">
+      <div class="project-header" onclick="toggleProject('project2')">
+        <div class="project-visual">
+          <div class="placeholder-img">
+            <span class="icon">🌐</span> 
+            <img src="img/ltvl-hero.png" alt="LTVL Website">Before/after LTVL website>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-tag">Webdesign</span>
+          <h3>Website L.T.V. Lelystad</h3>
+          <p class="project-summary">Nieuwe clubwebsite opgezet op het KNLTB.Club platform ter vervanging van de verouderde Wix-site.</p>
+          <div class="project-toggle">
+            <span>Meer bekijken</span>
+            <span class="arrow">▼</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-detail">
+        <div class="project-detail-inner">
+          <div class="carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="img/ltvl-old.png" alt="Oude Wix website"></div>
+              <div class="carousel-slide"><img src="img/ltvl-hero.png" alt="Nieuwe homepage"></div>
+              <div class="carousel-slide"><img src="img/ltvl-3.png" alt="Competitie pagina"></div>
+            </div>
+            <button class="carousel-btn prev" onclick="carouselNav(this, -1)">◂</button>
+            <button class="carousel-btn next" onclick="carouselNav(this, 1)">▸</button>
+          </div>
+          <div class="carousel-dots" data-dots></div>
+          <p class="project-detail-text">
+            De oude Wix-website was verouderd en onoverzichtelijk. Via het KNLTB.Club platform heb ik een volledig nieuwe site opgezet. Binnen de mogelijkheden van het CMS de contentstructuur, SEO en visuele stijl vormgegeven. Custom CSS ingezet voor een eigen look-and-feel die past bij de club.
+          </p>
+          <a href="https://ltvl.knltb.site/" target="_blank" class="btn-proto">Bekijk live site →</a>
+          <div class="project-skills">
+            <span>CMS</span>
+            <span>SEO</span>
+            <span>Copywriting</span>
+            <span>CSS</span>
+            <span>Contentstructuur</span>
+          </div>
+          <div class="project-close-toggle" onclick="toggleProject('project2')">
+            <span>Minder bekijken</span>
+            <span class="arrow">▲</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-card fade-in" id="project3">
+      <div class="project-header" onclick="toggleProject('project3')">
+        <div class="project-visual">
+          <div class="placeholder-img">
+            <span class="icon">🎨</span>Relatiecoaching Helmond
+            <img src="img/rc-hero.png" alt="Homepage Relatiecoaching Helmond">
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-tag">UI Design</span>
+          <h3>Fresh Focus - Relatiecoaching Helmond</h3>
+          <p class="project-summary">Website-prototype ontwikkeld voor een start-up in de relatiecoaching als basis voor haar online aanwezigheid.</p>
+          <div class="project-toggle">
+            <span>Meer bekijken</span>
+            <span class="arrow">▼</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-detail">
+        <div class="project-detail-inner">
+          <div class="carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="img/rc-hero.png" alt="Homepage Relatiecoaching"></div>
+              <div class="carousel-slide"><img src="img/rc-2.png" alt="Werkwijze pagina"></div>
+              <div class="carousel-slide"><img src="img/rc-3.png" alt="Contact pagina"></div>
+            </div>
+            <button class="carousel-btn prev" onclick="carouselNav(this, -1)">◂</button>
+            <button class="carousel-btn next" onclick="carouselNav(this, 1)">▸</button>
+          </div>
+          <div class="carousel-dots" data-dots></div>
+          <p class="project-detail-text">
+            Voor een start-up in de relatiecoaching heb ik een website-prototype ontwikkeld dat dient als inspiratie voor haar toekomstige online aanwezigheid. De eigenaar maakte een carrièreswitch en zocht een frisse uitstraling voor haar nieuwe onderneming. Het resultaat is een modern en gebruiksvriendelijk prototype dat zij kon gebruiken als basis voor haar definitieve website.
+          </p>
+          <a href="https://xd.adobe.com/view/5d54b063-0403-402d-9d61-f5d1d1035fae-0807/" target="_blank" class="btn-proto">Bekijk prototype →</a>
+          <div class="project-skills">
+            <span>UI Design</span>
+            <span>Prototyping</span>
+            <span>Adobe XD</span>
+            <span>Branding</span>
+          </div>
+          <div class="project-close-toggle" onclick="toggleProject('project3')">
+            <span>Minder bekijken</span>
+            <span class="arrow">▲</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 4 -->
+    <div class="project-card fade-in" id="project4">
+      <div class="project-header" onclick="toggleProject('project4')">
+        <div class="project-visual">
+          <div class="placeholder-img">
+            <span class="icon">🏛️</span>Responsive Webdesign Plog de Dag voor gemeente Rotterdam
+            <img src="img/plog-hero.png" alt="Plog de Dag">
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-tag">UI Design</span>
+          <h3>Plog de Dag — Gemeente Rotterdam</h3>
+          <p class="project-summary">Responsive website ontworpen voor een gemeentelijke campagne die inwoners stimuleert actief bij te dragen aan een schonere stad.</p>
+          <div class="project-toggle">
+            <span>Meer bekijken</span>
+            <span class="arrow">▼</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-detail">
+        <div class="project-detail-inner">
+          <div class="carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="img/plog-hero.png" alt="Desktop weergave"></div>
+              <div class="carousel-slide"><img src="img/plog-4.png" alt="Tablet weergave"></div>
+              <div class="carousel-slide"><img src="img/plog-2.png" alt="Mobiele weergave"></div>
+              <div class="carousel-slide"><img src="img/plog-3.png" alt="Content weergave"></div>
+            </div>
+            <button class="carousel-btn prev" onclick="carouselNav(this, -1)">◂</button>
+            <button class="carousel-btn next" onclick="carouselNav(this, 1)">▸</button>
+          </div>
+          <div class="carousel-dots" data-dots></div>
+          <p class="project-detail-text">
+           De gemeente Rotterdam lanceerde de campagne "Plog de Dag" om Rotterdammers aan te moedigen tijdens het wandelen afval te verzamelen. Ik heb een volledig responsive ontwerp gemaakt — geschikt voor mobiel, tablet en desktop — dat de campagne helder uitlegt, bezoekers motiveert om mee te doen en praktische informatie biedt om direct aan de slag te gaan.
+          </p>
+          <a href="https://xd.adobe.com/view/a9b095eb-973a-4128-91c4-fd43d3ce6f7a-fce3/" target="_blank" class="btn-proto">Bekijk prototype →</a>
+          <div class="project-skills">
+            <span>UI Design</span>
+            <span>Responsive</span>
+            <span>Adobe XD</span>
+            <span>Prototyping</span>
+          </div>
+          <div class="project-close-toggle" onclick="toggleProject('project4')">
+            <span>Minder bekijken</span>
+            <span class="arrow">▲</span>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- 5. ASOS -->
+    <div class="project-card fade-in" id="project5">
+      <div class="project-header" onclick="toggleProject('project5')">
+        <div class="project-visual"><img src="img/asos-hero.png" alt="ASOS Semantic HTML"></div>
+        <div class="project-info">
+          <span class="project-tag">Coding</span>
+          <h3>ASOS — Semantic HTML & CSS</h3>
+          <p class="project-summary">Complexe website volledig nagebouwd met semantische HTML en pure CSS, zonder divs, spans of classes.</p>
+          <div class="project-toggle"><span>Meer bekijken</span> <span class="arrow">▼</span></div>
+        </div>
+      </div>
+      <div class="project-detail">
+        <div class="project-detail-inner">
+          <div class="carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="img/asos-hero.png" alt="Homepage nagebouwd"></div>
+              <div class="carousel-slide"><img src="img/asos-2.png" alt="Productpagina"></div>
+              <div class="carousel-slide"><img src="img/asos-3.png" alt="Semantische HTML structuur"></div>
+            </div>
+            <button class="carousel-btn prev" onclick="carouselNav(this,-1)">◂</button>
+            <button class="carousel-btn next" onclick="carouselNav(this,1)">▸</button>
+          </div>
+          <div class="carousel-dots" data-dots></div>
+          <p class="project-detail-text">Voor dit project heb ik de website van ASOS volledig nagebouwd met uitsluitend semantische HTML-elementen en pure CSS. Geen divs, spans, classes of andere niet-semantische constructies. Het doel: een website waarvan de structuur logisch, betekenisvol en toegankelijk is — zowel voor ontwikkelaars als voor screenreaders. ASOS gekozen vanwege de uitgebreide indeling en vele componenten.</p>
+          <div class="project-skills">
+            <span>HTML</span><span>CSS</span><span>Semantisch</span><span>Toegankelijkheid</span>
+          </div>
+          <div class="project-close-toggle" onclick="toggleProject('project5')"><span>Minder bekijken</span> <span class="arrow">▲</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WAVE 2 -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="height:80px">
+    <path d="M0 80H1440V40C1440 40 1320 0 1080 20C840 40 720 0 480 20C240 40 120 10 0 30V80Z" fill="#2D5C4F"/>
+  </svg>
+</div>
+
+<!-- OVER MIJ / CV -->
+<section id="over-mij">
+  <div class="section-inner">
+    <p class="section-label" style="color:var(--green-muted)">Over mij</p>
+    <h2 class="section-title" style="color:var(--white)">Achtergrond</h2>
+    <p class="section-subtitle" style="color:rgba(255,255,255,0.65)">Digital designer met een BSc in Communication & Multimedia Design. Ik krijg energie van het bedenken van oplossingen die echt werken voor mensen. Sterk in conceptueel denken, snel schakelen en samenwerken.</p>
+    <div class="cv-grid">
+      <div class="cv-column">
+        <h3>Opleiding</h3>
+        <div class="cv-entry">
+          <h4>BSc Communication & Multimedia Design</h4>
+          <div class="cv-meta">Hogeschool van Amsterdam · 2018 – 2024</div>
+        </div>
+        <div class="cv-entry">
+          <h4>Minor Video & Televisie</h4>
+          <div class="cv-meta">Hogeschool van Amsterdam· 2022 – 2023</div>
+        </div>
+        <h3>Werkervaring</h3>
+        <div class="cv-entry">
+          <h4>Assistent producent & geluidsman</h4>
+          <div class="cv-meta">Zcene · mei – okt 2023</div>
+          <p>Planning, draaiboeken, locatie scouting en stakeholdercommunicatie. Daarnaast geluidsman.</p>
+        </div>
+        <div class="cv-entry">
+          <h4>Facilitaire dienst</h4>
+          <div class="cv-meta">Hanzeborg Sportaccommodatie · jun 2018 – heden</div>
+          <p>Onderhoud en hygiëne van de sportaccommodatie.</p>
+        </div>
+        <div class="cv-download">
+          <a href="CV_Casper_Hamers.pdf" class="btn btn-cv" download>Download CV (PDF)</a>
+        </div>
+      </div>
+      <div class="cv-column">
+        <h3>Vaardigheden</h3>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h4>Design</h4>
+            <ul>
+              <li>Conceptueel denken</li>
+              <li>User-centered design</li>
+              <li>Visual UI design</li>
+              <li>Wireframing & prototyping</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Tools</h4>
+            <ul>
+              <li>Figma</li>
+              <li>Adobe Creative Cloud</li>
+              <li>HTML & CSS</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Overig</h4>
+            <ul>
+              <li>Samenwerken</li>
+              <li>Stakeholdercommunicatie</li>
+              <li>Probleemoplossend vermogen</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Taal</h4>
+            <ul>
+              <li>Nederlands (moedertaal)</li>
+              <li>Engels (professioneel)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Laten we praten</h2>
+    <p class="section-subtitle" style="margin:0 auto">Geïnteresseerd in samenwerken of heb je een vraag? Neem gerust contact op.</p>
+    <div class="contact-links">
+      <a href="mailto:hamerscasper@gmail.com" class="contact-item">
+        <div class="contact-icon">@</div>
+        <span>hamerscasper@gmail.com</span>
+      </a>
+      <a href="tel:+31645287889" class="contact-item">
+        <div class="contact-icon">T</div>
+        <span>06-45287889</span>
+      </a>
+      <a href="https://www.linkedin.com/in/casper-hamers-bb24621a4/" target="_blank" class="contact-item"><div class="contact-icon">in</div><span>LinkedIn</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Casper Hamers — UI/UX Designer</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
